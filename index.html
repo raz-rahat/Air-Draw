@@ -38,12 +38,10 @@
   #recPill i{width:9px;height:9px;border-radius:50%;background:#ff2b50;animation:pulse 1s infinite;}
   @keyframes pulse{50%{opacity:.3}}
 
-  /* dim slider (right) */
   .dim{position:absolute;right:8px;top:50%;transform:translateY(-50%);z-index:6;display:flex;flex-direction:column;align-items:center;gap:8px;
     padding:12px 8px;border-radius:18px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
   .dim span{font-size:14px;}
-  .dim input[type=range]{writing-mode:vertical-lr;direction:rtl;-webkit-appearance:slider-vertical;appearance:slider-vertical;
-    width:6px;height:140px;border-radius:6px;background:rgba(255,255,255,.16);outline:none;}
+  .dim input[type=range]{writing-mode:vertical-lr;direction:rtl;-webkit-appearance:slider-vertical;appearance:slider-vertical;width:6px;height:140px;border-radius:6px;background:rgba(255,255,255,.16);outline:none;}
   .dim input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);cursor:pointer;}
   .dim input[type=range]::-moz-range-thumb{width:18px;height:18px;border:none;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);cursor:pointer;}
 
@@ -71,9 +69,7 @@
 
   #gate{position:absolute;inset:0;z-index:9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center;padding:24px;
     background:radial-gradient(140% 100% at 50% 0%,#0c1226,#06080f 70%);}
-  #gate h1{font-family:var(--display);font-size:clamp(30px,8vw,58px);line-height:1.05;font-weight:700;
-    background:linear-gradient(120deg,#00f0ff,#b14bff,#ff2bd6);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shift 5s ease infinite;}
-  @keyframes shift{50%{background-position:100% 50%}}
+  #gate h1{font-family:var(--display);font-size:clamp(32px,9vw,60px);line-height:1.05;font-weight:700;color:#fff;text-shadow:0 0 30px rgba(0,240,255,.6);}
   #gate .tag{color:var(--muted);font-size:15px;max-width:440px;line-height:1.7;}
   #gate .steps{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
   #gate .step{font-size:13px;color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line);padding:10px 14px;border-radius:14px;max-width:180px;}
@@ -84,14 +80,15 @@
   .copy b{color:#aeb6d4;}
   .spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.25);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none;}
 
-  #intro{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;text-align:center;padding:24px;cursor:pointer;
-    background:radial-gradient(140% 100% at 50% 32%,#0e1430,#06080f 72%);}
-  #intro .orb{width:88px;height:88px;border-radius:24px;background:conic-gradient(from 0deg,#00f0ff,#b14bff,#ff2bd6,#00f0ff);box-shadow:0 0 60px #00f0ff70;animation:spin 5s linear infinite,pop .8s ease;}
+  #intro{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;cursor:pointer;
+    background:radial-gradient(140% 100% at 50% 34%,#0e1430,#06080f 72%);}
+  #intro .orb{width:84px;height:84px;border-radius:23px;background:conic-gradient(from 0deg,#00f0ff,#b14bff,#ff2bd6,#00f0ff);box-shadow:0 0 60px #00f0ff70;animation:spin 5s linear infinite,pop .8s ease;}
   @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
   #intro .t1{font-family:var(--display);font-size:clamp(40px,11vw,82px);font-weight:700;margin-top:8px;color:#fff;
     text-shadow:0 0 30px rgba(0,240,255,.7),0 0 10px rgba(0,240,255,.5);opacity:0;animation:up .7s ease .4s forwards;}
-  #intro .dev{font-size:clamp(15px,4.2vw,21px);color:#cdd4ec;opacity:0;animation:up .7s ease 1s forwards;}
-  #intro .skip{position:absolute;bottom:26px;font-size:12px;color:var(--muted);opacity:0;animation:fadein 1s ease 2.5s forwards;}
+  #intro .dev{font-size:clamp(15px,4.2vw,21px);color:#dde3f5;opacity:0;animation:up .7s ease 1s forwards;}
+  #intro .school2{font-size:clamp(13px,3.6vw,18px);color:#9fb6d6;opacity:0;animation:up .7s ease 1.4s forwards;}
+  #intro .skip{position:absolute;bottom:26px;font-size:12px;color:var(--muted);opacity:0;animation:fadein 1s ease 2.1s forwards;}
   @keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   @keyframes fadein{to{opacity:1}}
   @media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
@@ -117,6 +114,7 @@
     <div class="sep"></div>
     <div class="brushes" id="brushes">
       <button class="btn bsel on" data-b="neon" title="নিয়ন">✏️</button>
+      <button class="btn bsel" data-b="rainbow" title="রংধনু ব্রাশ">🌈</button>
       <button class="btn bsel" data-b="star" title="তারা">⭐</button>
       <button class="btn bsel" data-b="glitter" title="গ্লিটার">✨</button>
       <button class="btn bsel" data-b="fire" title="ফায়ার">🔥</button>
@@ -143,13 +141,14 @@
     </div>
     <button class="btn primary" id="go"><span class="spinner" id="sp"></span><span id="goText">▶ শুরু করো</span></button>
     <div id="err"></div>
-    <div class="copy">© 2026 <b>Rahat-ul-Fardoush Raz</b><br>Bangabashi Secondary School<br>সর্বস্বত্ব সংরক্ষিত</div>
+    <div class="copy">© 2026 <b>Rahat-ul-Fardoush Raz</b><br>সর্বস্বত্ব সংরক্ষিত</div>
   </div>
 
   <div id="intro">
     <div class="orb"></div>
     <div class="t1">Magic Draw</div>
     <div class="dev">Developed by Rahat-ul-Fardoush Raz</div>
+    <div class="school2">Bangabashi Secondary School</div>
     <div class="skip">স্ক্রিনে টাচ করে এগিয়ে যাও →</div>
   </div>
 </div>
@@ -158,7 +157,7 @@
 import { HandLandmarker, FilesetResolver }
   from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10/vision_bundle.mjs";
 
-const AUTHOR="Rahat-ul-Fardoush Raz", SCHOOL="Bangabashi Secondary School", GAIN=1.2;
+const AUTHOR="Rahat-ul-Fardoush Raz", GAIN=1.2;
 const video=document.getElementById('cam');
 const glowC=document.getElementById('glow'), coreC=document.getElementById('core'), cursor=document.getElementById('cursor');
 const gctx=glowC.getContext('2d'), xctx=coreC.getContext('2d'), cctx=cursor.getContext('2d');
@@ -171,7 +170,7 @@ let color=COLORS[0],brush=7,glow=12,rainbowOn=false,rainbowHue=0,brushStyle='neo
 const swEl=document.getElementById('swatches'),allSw=[];
 COLORS.forEach((c,i)=>{const b=document.createElement('button');b.className='sw'+(i===0?' on':'');b.style.background=c;b.setAttribute('aria-label','রঙ');
   b.onclick=()=>{color=c;rainbowOn=false;sel(b);};swEl.appendChild(b);allSw.push(b);});
-const rb=document.createElement('button');rb.className='sw rainbow';rb.title='রংধনু';rb.onclick=()=>{rainbowOn=true;sel(rb);};swEl.appendChild(rb);allSw.push(rb);
+const rb=document.createElement('button');rb.className='sw rainbow';rb.title='রংধনু রঙ';rb.onclick=()=>{rainbowOn=true;sel(rb);};swEl.appendChild(rb);allSw.push(rb);
 function sel(el){allSw.forEach(x=>x.classList.remove('on'));el.classList.add('on');}
 
 document.querySelectorAll('.bsel').forEach(b=>b.onclick=()=>{brushStyle=b.dataset.b;document.querySelectorAll('.bsel').forEach(x=>x.classList.remove('on'));b.classList.add('on');});
@@ -185,11 +184,26 @@ const dimInput=document.getElementById('dim');
 function applyCam(){video.style.filter='brightness('+camBri+') saturate(1.06) contrast(1.03)';}
 dimInput.oninput=e=>{camBri=(+e.target.value)/100;applyCam();};
 
+/* ---------- One-Euro filter (stable, no lag) ---------- */
+class OneEuro{
+  constructor(minCut,beta,dCut){this.mc=minCut;this.beta=beta;this.dc=dCut;this.xp=null;this.dxp=0;this.tp=null;}
+  a(cut,dt){const tau=1/(2*Math.PI*cut);return 1/(1+tau/dt);}
+  f(x,t){
+    if(this.tp===null){this.tp=t;this.xp=x;return x;}
+    let dt=(t-this.tp)/1000; if(dt<=0)dt=1/60;
+    const dx=(x-this.xp)/dt, aD=this.a(this.dc,dt), dxh=aD*dx+(1-aD)*this.dxp;
+    const cut=this.mc+this.beta*Math.abs(dxh), al=this.a(cut,dt), xh=al*x+(1-al)*this.xp;
+    this.xp=xh;this.dxp=dxh;this.tp=t;return xh;
+  }
+  reset(){this.xp=null;this.dxp=0;this.tp=null;}
+}
+const fX=new OneEuro(1.0,0.025,1.0), fY=new OneEuro(1.0,0.025,1.0);
+
 /* ---------- sizing ---------- */
 let W=innerWidth,H=innerHeight,DPR=Math.min(devicePixelRatio||1,1.5);
 const layers=[glowC,coreC,cursor], lctx=[gctx,xctx,cctx];
-function clearOne(ctx,cv){ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,cv.width,cv.height);ctx.restore();}
-function clearAll(){clearOne(gctx,glowC);clearOne(xctx,coreC);}
+function snap(cv){if(!cv.width)return null;const c=document.createElement('canvas');c.width=cv.width;c.height=cv.height;c.getContext('2d').drawImage(cv,0,0);return c;}
+function clearAll(){for(const c of [[gctx,glowC],[xctx,coreC]]){c[0].save();c[0].setTransform(1,0,0,1,0,0);c[0].clearRect(0,0,c[1].width,c[1].height);c[0].restore();}}
 function fit(){
   const pg=snap(glowC),px=snap(coreC);
   W=innerWidth;H=innerHeight;DPR=Math.min(devicePixelRatio||1,1.5);
@@ -198,16 +212,15 @@ function fit(){
   if(px){xctx.save();xctx.setTransform(1,0,0,1,0,0);xctx.drawImage(px,0,0);xctx.restore();}
   undoStack.length=0;
 }
-function snap(cv){if(!cv.width)return null;const c=document.createElement('canvas');c.width=cv.width;c.height=cv.height;c.getContext('2d').drawImage(cv,0,0);return c;}
 addEventListener('resize',fit);
 
-/* ---------- brushes: glow layer (colored) + core layer (bright) ---------- */
+/* ---------- smooth neon: curve on glow + core layers ---------- */
 function gblur(){return fx?Math.min(glow,16):0;}
-function neon(x1,y1,x2,y2,col){
+function neonCurve(m0x,m0y,cx,cy,m1x,m1y,col){
   gctx.save();gctx.lineCap='round';gctx.lineJoin='round';gctx.shadowColor=col;gctx.shadowBlur=gblur();gctx.strokeStyle=col;gctx.lineWidth=brush*1.8;
-  gctx.beginPath();gctx.moveTo(x1,y1);gctx.lineTo(x2,y2);gctx.stroke();gctx.restore();
+  gctx.beginPath();gctx.moveTo(m0x,m0y);gctx.quadraticCurveTo(cx,cy,m1x,m1y);gctx.stroke();gctx.restore();
   xctx.save();xctx.lineCap='round';xctx.lineJoin='round';xctx.shadowColor=col;xctx.shadowBlur=fx?Math.min(glow*0.4,7):0;xctx.strokeStyle='#ffffff';xctx.lineWidth=Math.max(brush*0.45,1.5);
-  xctx.beginPath();xctx.moveTo(x1,y1);xctx.lineTo(x2,y2);xctx.stroke();xctx.restore();
+  xctx.beginPath();xctx.moveTo(m0x,m0y);xctx.quadraticCurveTo(cx,cy,m1x,m1y);xctx.stroke();xctx.restore();
 }
 function starPath(ctx,cx,cy,rad){ctx.beginPath();for(let i=0;i<10;i++){const a=Math.PI/5*i-Math.PI/2,rr=i%2?rad*0.45:rad;ctx.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr);}ctx.closePath();ctx.fill();}
 function starStamp(cx,cy,r,col){gctx.save();gctx.shadowColor=col;gctx.shadowBlur=gblur();gctx.fillStyle=col;starPath(gctx,cx,cy,r);gctx.restore();
@@ -215,34 +228,32 @@ function starStamp(cx,cy,r,col){gctx.save();gctx.shadowColor=col;gctx.shadowBlur
 function glitterStamp(x,y,col){for(let i=0;i<3;i++){const a=Math.random()*7,d=Math.random()*brush*2.2,gx=x+Math.cos(a)*d,gy=y+Math.sin(a)*d,r=Math.random()*brush*0.4+0.6,white=Math.random()<0.35,ctx=white?xctx:gctx;
   ctx.save();ctx.shadowColor=col;ctx.shadowBlur=fx?Math.min(glow*0.6,10):0;ctx.globalAlpha=Math.random()*0.5+0.5;ctx.fillStyle=white?'#fff':col;ctx.beginPath();ctx.arc(gx,gy,r,0,7);ctx.fill();ctx.restore();}}
 function fireColor(){return 'hsl('+(Math.random()*42)+',100%,'+(55+Math.random()*10)+'%)';}
-function strokeColor(){if(rainbowOn){rainbowHue=(rainbowHue+7)%360;return 'hsl('+rainbowHue+',100%,62%)';}return color;}
-function paint(p,x1,y1,x2,y2){
-  if(brushStyle==='neon')neon(x1,y1,x2,y2,strokeColor());
-  else if(brushStyle==='fire')neon(x1,y1,x2,y2,fireColor());
-  else if(brushStyle==='star'){p.acc=(p.acc||0)+Math.hypot(x2-x1,y2-y1);if(p.acc>=brush*2.6){p.acc=0;starStamp(x2,y2,brush*1.7,strokeColor());}}
-  else if(brushStyle==='glitter')glitterStamp(x2,y2,strokeColor());
-}
+function strokeColor(){if(rainbowOn||brushStyle==='rainbow'){rainbowHue=(rainbowHue+6)%360;return 'hsl('+rainbowHue+',100%,62%)';}return color;}
 function eraseAt(cx,cy,r){for(const c of [gctx,xctx]){c.save();c.globalCompositeOperation='destination-out';c.fillStyle='#000';c.beginPath();c.arc(cx,cy,r,0,7);c.fill();c.restore();}}
 
-/* ---------- undo (both layers) ---------- */
+function paint(pen,ip){
+  if(brushStyle==='star'){pen.acc=(pen.acc||0)+Math.hypot(ip.x-pen.prev.x,ip.y-pen.prev.y);if(pen.acc>=brush*2.6){pen.acc=0;starStamp(ip.x,ip.y,brush*1.7,strokeColor());}}
+  else if(brushStyle==='glitter'){glitterStamp(ip.x,ip.y,strokeColor());}
+  else{const midX=(pen.prev.x+ip.x)/2,midY=(pen.prev.y+ip.y)/2,col=brushStyle==='fire'?fireColor():strokeColor();
+    neonCurve(pen.mid.x,pen.mid.y,pen.prev.x,pen.prev.y,midX,midY,col);pen.mid={x:midX,y:midY};}
+}
+
+/* ---------- undo ---------- */
 const undoStack=[];
 function pushUndo(){if(undoStack.length>=8)undoStack.shift();undoStack.push({g:snap(glowC),x:snap(coreC)});}
 function undo(){const s=undoStack.pop();if(!s)return;
   gctx.save();gctx.setTransform(1,0,0,1,0,0);gctx.clearRect(0,0,glowC.width,glowC.height);if(s.g)gctx.drawImage(s.g,0,0);gctx.restore();
   xctx.save();xctx.setTransform(1,0,0,1,0,0);xctx.clearRect(0,0,coreC.width,coreC.height);if(s.x)xctx.drawImage(s.x,0,0);xctx.restore();}
 
-/* ---------- map landmark -> mirrored screen (full-screen reach via GAIN) ---------- */
-function toScreen(nx,ny){
-  nx=Math.min(1,Math.max(0,0.5+(nx-0.5)*GAIN));ny=Math.min(1,Math.max(0,0.5+(ny-0.5)*GAIN));
-  const vw=video.videoWidth,vh=video.videoHeight,s=Math.max(W/vw,H/vh),dw=vw*s,dh=vh*s,ox=(W-dw)/2,oy=(H-dh)/2;
-  return{x:W-(ox+nx*dw),y:oy+ny*dh};
-}
+/* ---------- map landmark -> mirrored screen ---------- */
+function toScreen(nx,ny){nx=Math.min(1,Math.max(0,0.5+(nx-0.5)*GAIN));ny=Math.min(1,Math.max(0,0.5+(ny-0.5)*GAIN));
+  const vw=video.videoWidth,vh=video.videoHeight,s=Math.max(W/vw,H/vh),dw=vw*s,dh=vh*s,ox=(W-dw)/2,oy=(H-dh)/2;return{x:W-(ox+nx*dw),y:oy+ny*dh};}
 
 /* ---------- state ---------- */
 let landmarker=null,stream=null,running=false,camOn=true;
-const pen={last:null,sm:null,mode:null,acc:0};
+const pen={prev:null,mid:null,mode:null,acc:0};
 function setStatus(t,m){statusT.textContent=t;statusEl.classList.remove('live','draw');if(m)statusEl.classList.add(m);}
-function curCol(){return rainbowOn?'hsl('+rainbowHue+',100%,60%)':color;}
+function curCol(){return (rainbowOn||brushStyle==='rainbow')?'hsl('+rainbowHue+',100%,60%)':color;}
 function drawCursor(p,active){cctx.save();const cc=curCol();cctx.shadowColor=cc;cctx.shadowBlur=fx?(active?14:7):0;cctx.fillStyle=active?cc:'rgba(255,255,255,.8)';cctx.beginPath();cctx.arc(p.x,p.y,active?8:5,0,7);cctx.fill();cctx.restore();}
 function eraseCursor(cx,cy,r){cctx.save();cctx.strokeStyle='rgba(255,255,255,.85)';cctx.lineWidth=2;cctx.setLineDash([6,6]);cctx.beginPath();cctx.arc(cx,cy,r,0,7);cctx.stroke();cctx.restore();}
 
@@ -255,28 +266,27 @@ function loop(){
 
 function handle(res){
   cctx.clearRect(0,0,W,H);
-  if(!res.landmarks||!res.landmarks.length){pen.last=null;pen.mode=null;setStatus('হাত খুঁজছি…','live');return;}
-  const lm=res.landmarks[0];
+  if(!res.landmarks||!res.landmarks.length){pen.prev=null;pen.mode=null;fX.reset();fY.reset();setStatus('হাত খুঁজছি…','live');return;}
+  const lm=res.landmarks[0], t=performance.now();
   const idx=lm[8].y<lm[6].y,mid=lm[12].y<lm[10].y,rng=lm[16].y<lm[14].y,pky=lm[20].y<lm[18].y;
   const open=idx&&mid&&rng&&pky, pointing=idx&&!mid;
 
-  let ip=toScreen(lm[8].x,lm[8].y);
-  pen.sm=pen.sm?{x:pen.sm.x*.35+ip.x*.65,y:pen.sm.y*.35+ip.y*.65}:ip; ip=pen.sm;
+  const raw=toScreen(lm[8].x,lm[8].y);
+  const ip={x:fX.f(raw.x,t),y:fY.f(raw.y,t)};
 
   if(open){
     const palm=toScreen(lm[9].x,lm[9].y),t4=toScreen(lm[4].x,lm[4].y),t20=toScreen(lm[20].x,lm[20].y);
-    const r=Math.max(Math.hypot(t4.x-t20.x,t4.y-t20.y)*0.55,16);   // fingers together->small, spread->big
+    const r=Math.max(Math.hypot(t4.x-t20.x,t4.y-t20.y)*0.55,16);
     if(pen.mode!=='erase'){pushUndo();pen.mode='erase';}
-    eraseAt(palm.x,palm.y,r);eraseCursor(palm.x,palm.y,r);pen.last=null;
+    eraseAt(palm.x,palm.y,r);eraseCursor(palm.x,palm.y,r);pen.prev=null;
     setStatus('মুছছো 🖐️','draw');
   } else if(pointing){
     drawCursor(ip,true);
-    if(!pen.last){pushUndo();pen.acc=0;}
-    else{const d=Math.hypot(ip.x-pen.last.x,ip.y-pen.last.y);if(d<Math.min(W,H)*0.3)paint(pen,pen.last.x,pen.last.y,ip.x,ip.y);}
-    pen.last=ip;pen.mode='draw';
+    if(pen.mode!=='draw'){pushUndo();pen.prev=ip;pen.mid=ip;pen.acc=0;pen.mode='draw';}
+    else{const d=Math.hypot(ip.x-pen.prev.x,ip.y-pen.prev.y);if(d<Math.min(W,H)*0.3)paint(pen,ip);pen.prev=ip;}
     setStatus('আঁকছো ✍️','draw');
   } else {
-    drawCursor(ip,false);pen.last=null;pen.mode=null;
+    drawCursor(ip,false);pen.prev=null;pen.mode=null;
     setStatus('প্রস্তুত — তর্জনী তোলো','live');
   }
 }
@@ -290,8 +300,7 @@ function composite(ctx,w,h){
     const vw=video.videoWidth,vh=video.videoHeight,s=Math.max(w/vw,h/vh),dw=vw*s,dh=vh*s;ctx.drawImage(video,(w-dw)/2,(h-dh)/2,dw,dh);ctx.restore();}
   ctx.drawImage(glowC,0,0,w,h);ctx.drawImage(coreC,0,0,w,h);
   ctx.save();ctx.textAlign='right';ctx.shadowColor='#000';ctx.shadowBlur=8;const fs=Math.max(12,Math.round(h*0.02));
-  ctx.globalAlpha=.55;ctx.fillStyle='#fff';ctx.font='600 '+fs+'px "Hind Siliguri",sans-serif';ctx.fillText('© '+AUTHOR,w-16,h-16-fs*1.2);
-  ctx.globalAlpha=.42;ctx.font='500 '+Math.round(fs*0.82)+'px "Hind Siliguri",sans-serif';ctx.fillText(SCHOOL,w-16,h-16);ctx.restore();
+  ctx.globalAlpha=.55;ctx.fillStyle='#fff';ctx.font='600 '+fs+'px "Hind Siliguri",sans-serif';ctx.fillText('© '+AUTHOR,w-16,h-16);ctx.restore();
 }
 document.getElementById('save').onclick=()=>{composite(sctx,W,H);const a=document.createElement('a');a.download='magic-draw.png';a.href=stage.toDataURL('image/png');a.click();};
 
@@ -313,7 +322,7 @@ document.getElementById('cam-toggle').onclick=()=>{camOn=!camOn;video.style.opac
 /* ---------- intro ---------- */
 const intro=document.getElementById('intro');
 function endIntro(){intro.style.transition='opacity .5s';intro.style.opacity='0';setTimeout(()=>intro.style.display='none',500);}
-intro.onclick=endIntro;setTimeout(endIntro,4000);
+intro.onclick=endIntro;setTimeout(endIntro,4200);
 
 /* ---------- start ---------- */
 const gate=document.getElementById('gate'),go=document.getElementById('go'),sp=document.getElementById('sp'),goText=document.getElementById('goText'),err=document.getElementById('err');
