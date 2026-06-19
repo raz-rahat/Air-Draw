@@ -147,7 +147,7 @@
     <div class="steps">
       <div class="step"><b>১</b>ক্যামেরার অনুমতি দাও</div>
       <div class="step"><b>২</b>তর্জনী তুলে আঁকো</div>
-      <div class="step"><b>৩</b>পাঁচ আঙুল খুলে মোছো</div>
+      <div class="step"><b>��</b>পাঁচ আঙুল খুলে মোছো</div>
     </div>
     <button class="btn primary" id="go"><span class="spinner" id="sp"></span><span id="goText">▶ শুরু করো</span></button>
     <div id="err"></div>
@@ -399,5 +399,14 @@ go.onclick=async()=>{
     sp.style.display='none';goText.textContent='▶ আবার চেষ্টা করো';go.disabled=false;}
 };
 </script>
+
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { 
+    (window.vaq = window.vaq || []).push(arguments); 
+  };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
 </body>
 </html>

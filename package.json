@@ -1,0 +1,22 @@
+{
+  "name": "air-draw",
+  "version": "1.0.0",
+  "description": "Magic Draw - Hand Gesture Drawing Application",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'",
+    "lint": "echo 'No linting configured'"
+  },
+  "keywords": [
+    "hand-tracking",
+    "mediapipe",
+    "canvas",
+    "drawing"
+  ],
+  "author": "Rahat-ul-Fardoush Raz",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
